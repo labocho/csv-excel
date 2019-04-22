@@ -29,7 +29,7 @@ require "csv/excel"
 
 buffer = ""
 
-csv = CSV.new(buffer, excel: true)
+csv = CSV.new(buffer, for_excel: true)
 csv << ["012", "12", "🍣", 123, Date.new(2019, 4, 1), Time.new(2019, 4, 1, 12, 34, 56)]
 
 # Excel reads csv as Shift_JIS by default.

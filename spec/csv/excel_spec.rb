@@ -3,7 +3,7 @@ require "spec_helper"
 describe CSV::Excel do
   let(:out) { "" }
   let(:csv) {
-    CSV.new(out, excel: true)
+    CSV.new(out, for_excel: true)
   }
   let(:row) {
     ["012", "12", "abc", 123, Date.new(2019, 4, 1), Time.new(2019, 4, 1, 12, 34, 56)]

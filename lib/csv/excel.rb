@@ -8,14 +8,14 @@ class CSV
     class Error < StandardError; end
 
     def initialize(data, **options)
-      @excel = options.delete(:excel)
-      options[:force_quotes] = true if @excel
+      @for_excel = options.delete(:for_excel)
+      options[:force_quotes] = true if @for_excel
       super(data, **options)
     end
 
     private
     def writer_options
-      super.merge(excel: @excel)
+      super.merge(for_excel: @for_excel)
     end
   end
 
@@ -25,7 +25,7 @@ class CSV
       TIME_FORMAT = -"%Y/%m/%d %H:%M:%S"
 
       def quote_field(field)
-        return super unless @options[:excel]
+        return super unless @options[:for_excel]
 
         case field
         when Date
