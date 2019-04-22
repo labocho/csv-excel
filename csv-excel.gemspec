@@ -4,7 +4,7 @@ require "csv/excel/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "csv-excel"
-  spec.version       = Csv::Excel::VERSION
+  spec.version       = CSV::Excel::VERSION
   spec.authors       = ["labocho"]
   spec.email         = ["labocho@penguinlab.jp"]
 

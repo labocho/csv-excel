@@ -1,6 +1,6 @@
 require "csv/excel/version"
 
-module Csv
+module CSV
   module Excel
     class Error < StandardError; end
     # Your code goes here...
