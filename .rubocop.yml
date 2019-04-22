@@ -2,12 +2,36 @@ AllCops:
   Exclude:
     - "bin/**/*"
 
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
 Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Performance/StartWith:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - "spec/**/*_spec.rb"
+
+Style/Documentation:
   Enabled: false
 
 Style/HashSyntax:
   Exclude:
     - "Rakefile"
 
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%r': '()'
+
+Style/RegexpLiteral:
+  Enabled: false
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
