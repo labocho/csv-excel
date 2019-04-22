@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - "bin/**/*"
+  TargetRubyVersion: 2.6
 
 Layout/EmptyLinesAroundAccessModifier:
   Enabled: false
@@ -19,6 +20,9 @@ Style/BlockDelimiters:
     - "spec/**/*_spec.rb"
 
 Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/HashSyntax:
