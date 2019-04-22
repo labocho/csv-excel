@@ -1,8 +1,10 @@
 # CSV::Excel
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/csv/excel`. To experiment with that code, run `bin/console` for an interactive prompt.
+CSV::Excel extends Ruby's `csv` stdlib to generate CSV file for Microsoft Excel.
+This converts...
 
-TODO: Delete this and the text above, and describe your gem
+- Time/Date/DateTime object to Excel's date/time format (`yyyy/mm/dd`, `yyyy/mm/dd hh:mm:ss`).
+- String to `="foo"` form for avoiding unexpected type casting (eg. Zero leading phone number, hyphen delimited street address).
 
 ## Installation
 
@@ -22,7 +24,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require "csv/excel"
+
+buffer = ""
+
+csv = CSV.new(buffer, excel: true)
+csv << ["012", "12", "🍣", 123, Date.new(2019, 4, 1), Time.new(2019, 4, 1, 12, 34, 56)]
+
+# Excel reads csv as Shift_JIS by default.
+# Please add BOM to indicate UTF-8 encoding.
+File.write("out.csv", CSV::Excel::UTF8BOM + buffer)
+
+# Open Finder/Explorer, and double-click `out.csv`!
+```
 
 ## Development
 
