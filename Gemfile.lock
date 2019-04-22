@@ -7,6 +7,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.0)
+    diff-lcs (1.3)
     jaro_winkler (1.5.2)
     parallel (1.17.0)
     parser (2.6.2.1)
@@ -14,6 +15,19 @@ GEM
     psych (3.1.0)
     rainbow (3.0.0)
     rake (10.5.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
     rubocop (0.67.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -32,6 +46,7 @@ DEPENDENCIES
   bundler (~> 2.0)
   csv-excel!
   rake (~> 10.0)
+  rspec (~> 3.8.0)
   rubocop (~> 0.67.2)
 
 BUNDLED WITH
