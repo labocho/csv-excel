@@ -1,0 +1,13 @@
+AllCops:
+  Exclude:
+    - "bin/**/*"
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/HashSyntax:
+  Exclude:
+    - "Rakefile"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
