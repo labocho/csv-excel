@@ -6,7 +6,7 @@ describe CSV::Excel do
     CSV.new(out, for_excel: true)
   }
   let(:row) {
-    ["012", "12", "abc", 123, Date.new(2019, 4, 1), Time.new(2019, 4, 1, 12, 34, 56)]
+    ["012", "12", "abc", "foo\"\nbar", 123, Date.new(2019, 4, 1), Time.new(2019, 4, 1, 12, 34, 56)]
   }
 
   subject {
@@ -14,8 +14,8 @@ describe CSV::Excel do
     out
   }
 
-  it "use formula for string value" do
-    should =~ %r(\A="012",="12",="abc")
+  it "use double quoted formula for string value" do
+    should =~ %r(\A"=""012""","=""12""","=""abc""","=""foo""""\nbar""",)
   end
 
   it "don't use formula for string value" do

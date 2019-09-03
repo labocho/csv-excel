@@ -35,7 +35,7 @@ class CSV
         when String
           quoted = super
           encoded_assign_character = "=".encode(quoted.encoding)
-          encoded_assign_character + quoted
+          super(encoded_assign_character + quoted)
         else
           super
         end
